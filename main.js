@@ -1,19 +1,25 @@
 
 /*
-We need functiosn to perform the individual
+We need functions to perform the individual
 tasks of making candy:
-    Buy some milk chocolate
-    Add some mint flavoring
-    Combine the chocolate and mint
-    Bake the mixture
-    Break the hardened sheet into 6 pieces
-    Eat the candy
+    - Buy some milk chocolate                    "buyChocolate"
+    - Add some mint flavoring                    "addFlavoring"
+    - Combine the chocolate and mint             "makeBarkMixture"
+   -  Bake the mixture                           "bakeCandy"
+   -  Break the hardened sheet into 6 pieces     "breakBark"
 */
 
+
 const buyChocolate = () => {
-    const candyObject = {   }
+
+    // create an empty object to start
+    const candyObject = {  }  
+
+    // Use dot notation to add a new property 'type' to the empty object 
         candyObject.type = "Milk Chocolate"
-    return candyObject
+
+        // Return the candyObject that now has a 'type' property on it 
+         return candyObject
 }
 
 const addFlavoring = (candyObject) => {
@@ -21,12 +27,13 @@ const addFlavoring = (candyObject) => {
     return candyObject
 }
 
+
 const makeBarkMixture = (candyObject) => {
     if (candyObject.flavor === "Mint") {
          candyObject.mixed = true
     }
     else {
-            candyObject.flavor = false
+            candyObject.mixed = false
     }
     return candyObject
 }
@@ -43,32 +50,31 @@ const bakeCandy = (candyObject) => {
 
 const breakBark = (candyObject) => {
     if (candyObject.baked === true) {
-        return  
-        [
-            "Mint Choccolate Bark Piece", 
-            "Mint Choccolate Bark Piece", 
-            "Mint Choccolate Bark Piece", 
-            "Mint Choccolate Bark Piece", 
-            "Mint Choccolate Bark Piece", 
-            "Mint Choccolate Bark Piece"
-        ]
+        return [ "Mint Choccolate Bark Piece", 
+                 "Mint Choccolate Bark Piece", 
+                 "Mint Choccolate Bark Piece", 
+                 "Mint Choccolate Bark Piece", 
+                 "Mint Choccolate Bark Piece", 
+                 "Mint Choccolate Bark Piece" ]
+    } else {
+        console.log("Not your lucky day")
     }
 }
 
 
-let buy = buyChocolate()
+// call (invoke) functions in order
+
+const buy = buyChocolate()
 console.log(buy)
 
-let flavor = addFlavoring(candyObject)
-console.log(flavor)
+const flavOFlav = addFlavoring(buy)
+console.log(flavOFlav)
 
-let bark = makeBarkMixture(candyObject)
+const bark = makeBarkMixture(buy)
 console.log(bark)
 
-let bake = bakeCandy(candyObject)
+const bake = bakeCandy(buy)
 console.log(bake)
 
-let barkBreak = breakBark(candyObject)
+const barkBreak = breakBark(buy)
 console.log(barkBreak)
-
-
